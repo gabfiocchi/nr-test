@@ -4,7 +4,7 @@
   "description": "New Relic Apdex Board - Code",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec cross-env NODE_ENV=development babel-node src/index.js",
+    "dev": "nodemon --exec cross-env NODE_ENV=development babel-node src/server.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,9 @@
   },
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "browserslist": [
+    "last 2 version",
+    "IE 11"
+  ]
 }
