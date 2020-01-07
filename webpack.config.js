@@ -1,10 +1,20 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
-    entry: './src/app/index.js',
+    entry: {
+        app: ['./src/app/index.js']
+    },
     output: {
-        filename: 'main.js',
+        filename: '[name].js', // [chunkhash]
         path: path.resolve(__dirname, 'dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: { loader: 'babel-loader' }
+            }
+        ]
     }
 }
