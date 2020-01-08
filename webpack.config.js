@@ -15,14 +15,14 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: { loader: 'babel-loader' }
+                loader: ['babel-loader', 'eslint-loader']
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            filename: './index.html' //relative to root of the application
+            template: './src/app/index.html'
         })
-   ]
-}
+    ]
+};

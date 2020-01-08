@@ -1,7 +1,13 @@
-import { sumar } from './modules/utils';
+/* global */
+import { App } from './core';
 
-const resultado = sumar(5, 2);
+// Pages
+import List from './pages/List';
+import Grid from './pages/Grid';
 
-console.log('hello world', resultado);
-
-fetch('google.com')
+App.create({
+    routes: {
+        '/': List,
+        '/grid': Grid
+    }
+});

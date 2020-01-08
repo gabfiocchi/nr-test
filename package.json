@@ -4,8 +4,9 @@
   "description": "New Relic Apdex Board - Code",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec cross-env NODE_ENV=development babel-node src/server.js",
-    "serve": "webpack --mode development --devtool source-maps",
+    "serve": "nodemon --exec cross-env NODE_ENV=development babel-node src/server.js",
+    "dev": "webpack-dev-server --mode development --devtool source-maps --open",
+    "start": "webpack --mode development --devtool source-maps",
     "prod": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,13 +19,19 @@
     "@babel/preset-env": "^7.7.7",
     "babel-loader": "^8.0.6",
     "cross-env": "^6.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-loader": "^3.0.3",
     "eslint-plugin-compat": "^3.3.0",
+    "eslint-plugin-import": "^2.19.1",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^2.0.2",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "core-js": "^3.6.2",
     "express": "^4.17.1"
   },
   "browserslist": [
