@@ -13,7 +13,7 @@ export default {
         window.history.pushState(data, title, route);
     },
     async renderPage() {
-        const app = document.getElementById('app');
+        const app = document.getElementById('root');
         const request = this.parseRequesURL();
 
         // TODO: agregar el 404.

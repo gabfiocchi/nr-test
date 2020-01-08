@@ -1,8 +1,7 @@
+// import styles from ''';
+// import './';
 export default {
-    name: 'Cards',
-    template: `
-        <div class="card">
-            Hola
-        </div>
-    `
+    render: async () => `<div class="card">
+        <li>A</li>
+    </div>`
 };
