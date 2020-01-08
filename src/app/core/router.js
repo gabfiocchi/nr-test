@@ -1,5 +1,3 @@
-/* global */
-
 export default {
     initialize(routes) {
         this.routes = routes;
@@ -22,10 +20,10 @@ export default {
     },
     parseRequesURL() {
         const url = window.location.hash.slice(1).toLowerCase() || '/';
-        const r = url.split('/');
+        const hash = url.split('/');
 
-        const resource = r[1] || null;
-        const id = r[2] || null;
+        const resource = hash[1] || null;
+        const id = hash[2] || null;
 
         let parsedURL = '/';
         if (resource) {

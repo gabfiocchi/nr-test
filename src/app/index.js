@@ -1,7 +1,5 @@
-/* global */
+import './main.scss';
 import { App } from './core';
-
-// Pages
 import List from './pages/List';
 import Grid from './pages/Grid';
 

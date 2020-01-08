@@ -4,6 +4,7 @@ export default {
     create(options) {
         window.onload = () => {
             const main = document.createElement('main');
+
             main.setAttribute('id', 'root');
             document.body.appendChild(main);
         };
