@@ -1,0 +1,23 @@
+@import '../../theme/variables';
+
+header {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    margin-top: 90px;
+    margin-bottom: $gutter/2;
+    padding: 0 $gutter;
+    white-space: nowrap;
+    
+    h1 {
+        margin-right: $gutter/2;
+    }
+    h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .form-group {
+        margin-left: $gutter;
+    }
+}

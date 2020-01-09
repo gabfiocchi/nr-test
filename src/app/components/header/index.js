@@ -1,14 +1,13 @@
-const Bottombar = {
-    render: async () => `
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>
-                    This is my foot. There are many like it, but this one is mine.
-                </p>
-            </div>
-        </footer>
-        `,
-    after_render: async () => { }
-};
+import './header.scss';
+import { Render } from '../../core';
 
-export default Bottombar;
+export default (props) => Render(`
+    <header>
+        <h1>Apps by Host</h1>
+        ${props.user ? `<h2>for user ${props.user}</h2>` : ''}
+        <div class="form-group">
+            <input type="checkbox" name="checkbox" id="vehicle1" value="value">
+            <label for="vehicle1">Show as list</label>
+        </div>
+    </header>
+`);

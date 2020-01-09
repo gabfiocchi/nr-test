@@ -1,8 +1,14 @@
 @import '../../theme/variables';
 
 .card {
+    box-sizing: border-box;
     background-color: $white;
+    margin: $gutter/2;
+    width: 100%;
+    flex-basis: 100%;
+    max-width: 375px;
     padding: $gutter;
+
     .title {
         margin-bottom: $interline;
     }

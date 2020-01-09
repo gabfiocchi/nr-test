@@ -1,0 +1,12 @@
+main {
+    margin: auto;
+    max-width: 840px;
+}
+.container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: $gutter;
+    padding: 0 $gutter/2;
+}

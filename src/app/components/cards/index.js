@@ -1,8 +1,9 @@
 import './cards.scss';
+import { Render } from '../../core';
 
-export default {
-    render: async () => `<div class="card">
-        <h3 class="title">1231231.as</h3>
-        <li>A</li>
-    </div>`
-};
+export default (props, slot) => Render(`
+    <div class="card">
+        ${props.title ? `<h3 class="title">${props.title}</h3>` : ''}
+        ${slot}
+    </div>
+`);

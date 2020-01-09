@@ -1,4 +1,7 @@
 @import './theme/variables';
+@import './theme/reset';
+@import './theme/layout';
+@import './theme/typography';
 
 html {
     font-family: $font-base;
@@ -13,24 +16,3 @@ body {
     font-weight: normal;
     margin: 0;
 }
-/* Layout */
-main {
-    max-width: 840px;
-    margin: auto;
-}
-
-/* Typography */
-h1 {
-    font-size: $h1-size;
-    font-weight: bold;
-    line-height: 43px;
-}
-h2 {
-    font-size: $h2-size;
-    line-height: 22px;
-}
-h3 {
-    font-size: $h3-size;
-    font-weight: bold;
-}
-p {}
