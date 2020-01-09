@@ -1,10 +1,4 @@
 {
   "version": 2,
-  "builds": [{ "src": "src/server.js", "use": "@now/node-server" }],
-  "config": {
-        "includeFiles": [
-          "public/*",
-          "public/**"
-        ]
-      }
+  "builds": [{ "src": "src/server.js", "use": "@now/node-server" }]
 }
