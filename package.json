@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "nodemon --exec cross-env NODE_ENV=development babel-node src/server.js",
+    "build": "npm run prod",
     "dev": "webpack-dev-server --mode development --devtool source-maps --open",
     "start": "webpack --mode development --devtool source-maps",
     "prod": "webpack --mode production",
