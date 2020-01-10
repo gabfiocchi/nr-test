@@ -1,21 +1,40 @@
 import { Router } from 'express';
-import Host from './controllers/Host';
+import HostController from './controllers/Host';
 
 export default (() => {
     const router = Router();
-    const HostController = new Host();
-
+    const HostCtrl = new HostController();
 
     router.get('/all', (_req, res) => {
-        res.status(200).json(HostController.data);
+        res.status(200).json(HostCtrl.data);
+    });
+
+    router.get('/hosts', (_req, res) => {
+        res.status(200).json(HostCtrl.getHostsApps());
     });
 
     router.get('/hosts/:host', (req, res) => {
-        if (!req.params.host) {
-            res.status(404).json('Error not found');
+        res.status(200).json(HostCtrl.getTopAppsByHost(req.params.host));
+    });
+
+    router.get('/hosts/remove/:id', (req, res) => {
+        const data = HostCtrl.removeAppFromHosts(req.params.id);
+        if (data) {
+            return res.status(200).json(data);
         }
-        console.log('1, req.params.host', req.params.host);
-        res.status(200).json(HostController.getTopAppsByHost(req.params.host));
+        return res.status(404).json({
+            message: `Apps with id ${req.params.id} not exists.`
+        });
+    });
+
+    router.get('/apps', (_req, res) => {
+        res.status(200).json(HostCtrl.getAppsWithHosts());
+    });
+
+    router.post('/apps', (req, res) => {
+        // devuelve la ruta con uno más
+        console.log('req', req.body);
+        res.status(200).json(HostCtrl.addAppToHosts(req.body));
     });
 
     return router;
