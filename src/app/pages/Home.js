@@ -22,7 +22,9 @@ export default class {
         this.state.test = true;
         let hosts;
         try {
-            this.state.hosts = await (await fetch('http://localhost:8100/api/hosts')).json();
+            const apiEndpoint = 'https://nr-apdex.herokuapp.com';
+            // const apiEndpoint = 'http://localhost:8100';
+            this.state.hosts = await (await fetch(`${apiEndpoint}/api/hosts`)).json();
         } catch (error) {
             this.fetchData();
         }

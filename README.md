@@ -1,6 +1,8 @@
 # New Relic Apdex Board - Code challenge
 
-
+# Starting
+caso para front + api
+caso para prod
 
 # Endpoints
 ### `GET` - /api/all

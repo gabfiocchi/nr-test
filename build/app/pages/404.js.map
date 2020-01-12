@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/app/pages/404.js"],"names":["render"],"mappings":";;;;;;eAAe;AACXA,EAAAA,MAAM,EAAE;AAAA;AAAA;AADG,C","sourcesContent":["export default {\n    render: () => `\n        <div class=\"error\">\n            <h1>Ups! Something it's wrong</h1>\n            <a href=\"/\">Go to home</a>\n        </div>\n    `\n};\n"],"file":"404.js"}
