@@ -1,10 +1,11 @@
-// class Component {
-//     constructor() {
-//         this.component = null;
-//     }
+import Render from './render';
 
-//     async render() {
-//         return this.component;
-//     }
-// }
-// export default (new Component()).render();
+export default class Component {
+    constructor(state) {
+        this.state = state;
+    }
+
+    render() {
+        return Render(this.template());
+    }
+}

@@ -4,9 +4,13 @@ main {
 }
 .container {
     align-items: flex-start;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-bottom: $gutter;
-    padding: 0 $gutter/2;
+    margin: 0 $gutter/2 $gutter;
+
+    &.listview {
+        flex-direction: column;
+    }
 }

@@ -32,8 +32,6 @@ export default (() => {
     });
 
     router.post('/apps', (req, res) => {
-        // devuelve la ruta con uno más
-        console.log('req', req.body);
         res.status(200).json(HostCtrl.addAppToHosts(req.body));
     });
 

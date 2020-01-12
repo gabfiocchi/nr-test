@@ -1,11 +1,11 @@
 import './main.scss';
 import { App } from './core';
-import List from './pages/List';
-import Grid from './pages/Grid';
+import HomePage from './pages/Home';
+import ErrorPage from './pages/404';
 
 App.create({
     routes: {
-        '/': List,
-        '/grid': Grid
+        '/': new HomePage(),
+        '/error': ErrorPage
     }
 });

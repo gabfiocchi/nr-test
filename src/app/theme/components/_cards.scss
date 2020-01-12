@@ -1,0 +1,23 @@
+.card {
+    box-sizing: border-box;
+    flex-basis: 50%;
+    margin-bottom: $gutter;
+    padding: 0 $gutter/2;
+    max-width: 50%;
+    width: 50%;
+
+    .content {
+        background-color: $white;
+        padding: $gutter;
+    }
+    .title {
+        margin-bottom: $interline;
+    }
+}
+.listview {
+    .card {
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+}

@@ -13,9 +13,11 @@ export default {
     async renderPage() {
         const app = document.getElementById('root');
         const request = this.parseRequesURL();
+        const page = this.routes[request] || this.routes['/error'];
 
-        // TODO: agregar el 404.
-        const page = this.routes[request];
+        if (page.fetchData) {
+            await page.fetchData();
+        }
         app.innerHTML = await page.render();
     },
     parseRequesURL() {

@@ -4,7 +4,6 @@
   "description": "New Relic Apdex Board - Code",
   "main": "index.js",
   "scripts": {
-    "preserve": "webpack --mode development --devtool source-maps",
     "serve": "nodemon --exec cross-env NODE_ENV=development babel-node src/server.js",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --devtool source-maps --open",
@@ -41,6 +40,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "core-js": "^3.6.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "browserslist": [

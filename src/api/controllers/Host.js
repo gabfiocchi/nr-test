@@ -24,7 +24,6 @@ export default class Host {
         const hosts = [];
 
         this.data.forEach((app) => {
-            // TODO: Replace with uid
             const appId = this.createAppId();
             this.appsWithHosts[appId] = [];
 
@@ -125,8 +124,7 @@ export default class Host {
             hostsArray.push(host);
         }
 
-        // TODO: Quitar los strings iguales.
-        // hostsArray = new Set(hostsArray);
+        hostsArray = hostsArray.filter((item, index) => hostsArray.indexOf(item) === index);
 
         // this.data.push({
         //     name,

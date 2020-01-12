@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/app/core/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;AAAA;;AACA;;AACA","sourcesContent":["export { default as App } from './app';\nexport { default as Router } from './router';\nexport { default as Render } from './render';\n"],"file":"index.js"}
