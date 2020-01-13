@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item component should render the template 1`] = `
+"
+            <li
+                class=\\"item\\"
+                onClick=\\"showAlert(1)\\"
+            >
+                <span>100</span>
+                <p>Dummy name</p>
+            </li>
+        "
+`;
+
+exports[`Item component should render the template 1`] = `
+"
+            <li
+                class=\\"item\\"
+                onClick=\\"showAlert(1)\\"
+            >
+                <span>100</span>
+                <p>Dummy name</p>
+            </li>
+        "
+`;

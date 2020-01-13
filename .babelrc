@@ -3,9 +3,9 @@
         [
             "@babel/preset-env",
             {
-                "useBuiltIns": "entry", // "usage" or "entry"
-                "corejs": 3,
-                "ignoreBrowserslistConfig": false
+                "useBuiltIns": "usage", // "usage" or "entry"
+                "corejs": 3
+                // "ignoreBrowserslistConfig": false
             }
         ]
     ]

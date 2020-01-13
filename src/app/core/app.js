@@ -1,6 +1,6 @@
 import HomePage from '../pages/Home';
 
-export default {
+export default class {
     create(options) {
         window.onload = () => {
             const main = document.createElement('main');
@@ -10,7 +10,9 @@ export default {
 
             this.initialize(options);
         };
-    },
+    }
+
+    // eslint-disable-next-line class-methods-use-this
     async initialize() {
         const app = document.getElementById('root');
         const page = new HomePage();
@@ -20,4 +22,4 @@ export default {
         }
         app.innerHTML = await page.render();
     }
-};
+}

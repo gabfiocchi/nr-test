@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import 'babel-polyfill';
 import './main.scss';
-import { App } from './core';
+import App from './core/app';
 
-App.create();
+const application = new App();
+application.create();

@@ -15,20 +15,21 @@ export default class {
             this.update();
         };
 
-        this.requestUserEmail();
+        // this.requestUserEmail();
     }
 
     async fetchData() {
         this.state.test = true;
         let hosts;
-        try {
-            const apiEndpoint = 'https://nr-apdex.herokuapp.com';
-            // const apiEndpoint = 'http://localhost:8100';
-            this.state.hosts = await (await fetch(`${apiEndpoint}/api/hosts`)).json();
-        } catch (error) {
-            console.log('error', error);
-            this.fetchData();
-        }
+        // try {
+        //     // const apiEndpoint = 'https://nr-apdex.herokuapp.com';
+        //     const apiEndpoint = 'http://localhost:8100';
+        //     this.state.hosts = await (await fetch(`${apiEndpoint}/api/hosts`)).json();
+        // } catch (error) {
+        //     // eslint-disable-next-line no-console
+        //     console.log('error', error);
+        //     this.fetchData();
+        // }
         return hosts;
     }
 
