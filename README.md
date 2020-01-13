@@ -21,6 +21,9 @@ Build Production Bundle
 npm run build
 ```
 
+## 
+The server is configured for the port `8080`, if you wish to modify and it will also change from where it will be consumed in the frontend, you can do it from the` apiEndpoint` variable, in the `/src/app/pages/Home.js`.
+
 ## Testing
 Uses Jest for Unit Testing and Snapshots.
 

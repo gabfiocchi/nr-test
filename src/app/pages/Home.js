@@ -19,8 +19,7 @@ export default class {
     async fetchData() {
         let hosts;
         try {
-            const apiEndpoint = 'https://nr-apdex.herokuapp.com';
-            // const apiEndpoint = 'http://localhost:8100';
+            const apiEndpoint = 'http://localhost:8100';
             this.state.hosts = await (await fetch(`${apiEndpoint}/api/hosts`)).json();
         } catch (error) {
             // eslint-disable-next-line no-console
