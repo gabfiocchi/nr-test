@@ -4,9 +4,9 @@ import Item from '../components/item';
 export default class {
     constructor() {
         this.state = {
-            email: null,
             viewGrid: true,
-            hosts: []
+            hosts: [],
+            retry: 0
         };
 
         document.toggleView = () => {
@@ -14,34 +14,24 @@ export default class {
 
             this.update();
         };
-
-        // this.requestUserEmail();
     }
 
     async fetchData() {
-        this.state.test = true;
         let hosts;
-        // try {
-        //     // const apiEndpoint = 'https://nr-apdex.herokuapp.com';
-        //     const apiEndpoint = 'http://localhost:8100';
-        //     this.state.hosts = await (await fetch(`${apiEndpoint}/api/hosts`)).json();
-        // } catch (error) {
-        //     // eslint-disable-next-line no-console
-        //     console.log('error', error);
-        //     this.fetchData();
-        // }
-        return hosts;
-    }
-
-    requestUserEmail(message) {
-        // eslint-disable-next-line no-alert
-        const email = prompt(message || 'Enter you email:');
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (email && re.test(String(email).toLowerCase())) {
-            this.state.email = email;
-        } else {
-            this.requestUserEmail('Please enter a valid email');
+        try {
+            const apiEndpoint = 'https://nr-apdex.herokuapp.com';
+            // const apiEndpoint = 'http://localhost:8100';
+            this.state.hosts = await (await fetch(`${apiEndpoint}/api/hosts`)).json();
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.log('error', error);
+            if (this.state.retry < 2) {
+                // eslint-disable-next-line no-plusplus
+                this.state.retry = ++this.state.retry;
+                this.fetchData();
+            }
         }
+        return hosts;
     }
 
     async update() {
@@ -50,11 +40,11 @@ export default class {
         app.innerHTML = await this.render();
     }
 
-    async render() {
+    render() {
         return `
             <header>
                 <h1>Apps by Host</h1>
-                <h2>for user ${this.state.email}</h2>
+                <h2>for user averylongemailadress@companyname.com</h2>
                 <div class="form-group">
                     <input type="checkbox" id="checkbox" ${this.state.viewGrid ? 'checked' : ''} onChange="toggleView()">
                     <label for="checkbox">${this.state.viewGrid ? 'Show as an awesome grid' : 'Show as list'}</label>

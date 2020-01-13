@@ -1,8 +1,33 @@
 # New Relic Apdex Board - Code challenge
 
-# Starting
-caso para front + api
-caso para prod
+## Install
+Require `node` and `npm or yarn` to install dependencies.
+Install dependencies
+``` shell
+npm install
+```
+Run Dev Server at http://localhost:8100
+``` shell
+npm run serve
+```
+
+Run Frontend at http://localhost:8080
+``` shell
+npm run dev
+```
+
+Build Production Bundle
+``` shell
+npm run build
+```
+
+## Testing
+Uses Jest for Unit Testing and Snapshots.
+
+Run tests
+``` shell
+npm test
+```
 
 # Endpoints
 ### `GET` - /api/all

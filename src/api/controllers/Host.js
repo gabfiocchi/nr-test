@@ -126,13 +126,13 @@ export default class Host {
 
         hostsArray = hostsArray.filter((item, index) => hostsArray.indexOf(item) === index);
 
-        // this.data.push({
-        //     name,
-        //     host: hostsArray,
-        //     contributors,
-        //     apdex,
-        //     version
-        // });
+        this.data.push({
+            name,
+            host: hostsArray,
+            contributors,
+            apdex,
+            version
+        });
 
         const appId = this.createAppId();
 
@@ -144,14 +144,14 @@ export default class Host {
             contributors
         );
 
-        // this.appsWithHosts[appId] = hostsArray;
+        this.appsWithHosts[appId] = hostsArray;
 
-        // hostsArray.forEach((hostName) => {
-        //     if (!this.hostsApps[hostName]) {
-        //         this.hostsApps[hostName] = new HostModel(hostName);
-        //     }
-        //     this.hostsApps[hostName].apps.push(appParsed);
-        // });
+        hostsArray.forEach((hostName) => {
+            if (!this.hostsApps[hostName]) {
+                this.hostsApps[hostName] = new HostModel(hostName);
+            }
+            this.hostsApps[hostName].apps.push(appParsed);
+        });
 
         return { app: appParsed, hosts: hostsArray };
     }

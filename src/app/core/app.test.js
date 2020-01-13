@@ -1,9 +1,13 @@
 /* eslint-disable no-undef */
-/* jest describe */
+/* jest describe it beforeEach */
 import App from './app';
-// import HomePage from '../pages/Home';
-// const HomePage = require('../pages/Home');
-// jest.mock('../pages/Home');
+
+// eslint-disable-next-line compat/compat
+const mockFetchPromise = Promise.resolve({
+    // eslint-disable-next-line compat/compat
+    json: () => Promise.resolve([])
+});
+window.fetch = jest.fn().mockImplementation(() => mockFetchPromise);
 
 const application = new App();
 
@@ -17,12 +21,4 @@ describe('index', () => {
         const main = document.getElementById('root');
         expect(main).toBeTruthy();
     });
-    // it.only('should render the Home page', () => {
-    //     application.initialize();
-    //     // const main = document.getElementsByClassName('container')[0];
-    //     // expect(main).toBeTruthy();
-
-    //     expect(HomePage.fetchData).toHaveBeenCalledTimes(1);
-    //     expect(HomePage.render).toHaveBeenCalledTimes(1);
-    // });
 });

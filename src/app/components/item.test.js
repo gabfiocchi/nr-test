@@ -1,5 +1,13 @@
 /* eslint-disable no-undef */
+/* jest describe it */
 import Item from './item';
+
+// eslint-disable-next-line compat/compat
+const mockFetchPromise = Promise.resolve({
+    // eslint-disable-next-line compat/compat
+    json: () => Promise.resolve({})
+});
+window.fetch = jest.fn().mockImplementation(() => mockFetchPromise);
 
 const item = new Item({
     version: 1,
@@ -18,6 +26,8 @@ describe('Item component', () => {
         expect(item.render()).toMatchSnapshot();
     });
     it('should call to alert', () => {
-        console.log('docu', document.getElementsByClassName('item')[0].innerHTML);
+        window.alert = jest.fn();
+        document.showAlert();
+        expect(window.alert).toBeCalled();
     });
 });

@@ -20,6 +20,6 @@ export default class {
         if (page.fetchData) {
             await page.fetchData();
         }
-        app.innerHTML = await page.render();
+        app.innerHTML = page.render();
     }
 }

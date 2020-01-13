@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page should render the template 1`] = `
+"
+            <header>
+                <h1>Apps by Host</h1>
+                <h2>for user averylongemailadress@companyname.com</h2>
+                <div class=\\"form-group\\">
+                    <input type=\\"checkbox\\" id=\\"checkbox\\" checked onChange=\\"toggleView()\\">
+                    <label for=\\"checkbox\\">Show as an awesome grid</label>
+                </div>
+            </header>
+            <div class=\\"container\\">                
+                
+            </div>
+        "
+`;
