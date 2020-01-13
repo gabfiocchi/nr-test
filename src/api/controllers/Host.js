@@ -42,8 +42,8 @@ export default class Host {
                 );
 
                 this.appsWithHosts[appId].push(hostName);
-
                 this.hostsApps[hostName].apps.push(appParsed);
+                this.hostsApps[hostName].apps = this.sortApdex(this.hostsApps[hostName].apps);
             }));
         });
 

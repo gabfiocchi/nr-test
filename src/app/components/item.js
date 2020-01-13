@@ -1,16 +1,20 @@
 import Component from '../core/component';
 
 export default class Item extends Component {
-    // eslint-disable-next-line no-useless-constructor
     constructor(appState) {
         super(appState);
+
+        document.showAlert = (version) => {
+            // eslint-disable-next-line no-alert
+            alert(`App version: ${version}`);
+        };
     }
 
     template() {
         return `
             <li
                 class="item"
-                onClick="alert('App version: ${this.state.version}')"
+                onClick="showAlert(${this.state.version})"
             >
                 <span>${this.state.apdex}</span>
                 <p>${this.state.name}</p>

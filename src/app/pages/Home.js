@@ -26,6 +26,7 @@ export default class {
             // const apiEndpoint = 'http://localhost:8100';
             this.state.hosts = await (await fetch(`${apiEndpoint}/api/hosts`)).json();
         } catch (error) {
+            console.log('error', error);
             this.fetchData();
         }
         return hosts;
@@ -33,7 +34,7 @@ export default class {
 
     requestUserEmail(message) {
         // eslint-disable-next-line no-alert
-        const email = prompt(message || 'Enter your user email:');
+        const email = prompt(message || 'Enter you email:');
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (email && re.test(String(email).toLowerCase())) {
             this.state.email = email;
